@@ -8,8 +8,8 @@ interface UserBucket {
 // You should user a different store like Redis, Cloudflare KV  for this instead of a Map for large scale applications.
 const userTokens = new Map<string, UserBucket>();
 
-const rate = 60000;
-const capacity = 5;
+const rate = 60000; // 1 minute in milliseconds
+const capacity = 5; // 5 requests per minute
 
 export const rateLimiter = (
   req: Request,
